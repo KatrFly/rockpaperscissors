@@ -1,5 +1,13 @@
 let playerSelection;
 let computerSelection;
+let scorePlayer = 0;
+let scoreComputer = 0;
+let amountGames = 0;
+
+const body = document.querySelector("#body");
+
+const score = document.createElement('div');
+body.appendChild(score);
 
 const paper = document.querySelector("#paper");
 paper.addEventListener('click', () => {
@@ -8,6 +16,21 @@ paper.addEventListener('click', () => {
     playerSelection = "paper";
     console.log(computerSelection);
     decideOutcome(playerSelection, computerSelection);
+    score.textContent = scorePlayer + " - " + scoreComputer;
+    amountGames = amountGames + 1;
+    if (amountGames < 5) {
+        score.textContent = scorePlayer + " - " + scoreComputer;
+    }
+    else if (scorePlayer < scoreComputer) {
+        score.textContent = "The computer won, try again!";
+    }
+    else if (scoreComputer < scorePlayer) {
+        score.textContent = "Congratulations, you won!";
+    }
+    else {
+        score.textContent = "it's a tie, play again!"
+    }
+    
 });
 
 const scissors = document.querySelector("#scissors");
@@ -17,9 +40,22 @@ scissors.addEventListener('click', () => {
     playerSelection = "scissors";
     console.log(computerSelection);
     decideOutcome(playerSelection, computerSelection);
+    amountGames = amountGames + 1;
+    if (amountGames < 5) {
+        score.textContent = scorePlayer + " - " + scoreComputer;
+    }
+    else if (scorePlayer < scoreComputer) {
+        score.textContent = "The computer won, try again!";
+    }
+    else if (scoreComputer < scorePlayer) {
+        score.textContent = "Congratulations, you won!";
+    }
+    else {
+        score.textContent = "it's a tie, play again!"
+    }
+    
+    
 });
-
-
 
 const rock = document.querySelector("#rock");
 rock.addEventListener('click', () => {
@@ -28,6 +64,21 @@ rock.addEventListener('click', () => {
     playerSelection = "rock";
     console.log(computerSelection);
     decideOutcome(playerSelection, computerSelection);
+    score.textContent = scorePlayer + " - " + scoreComputer;
+    amountGames = amountGames + 1;
+    if (amountGames < 5) {
+        score.textContent = scorePlayer + " - " + scoreComputer;
+    }
+    else if (scorePlayer < scoreComputer) {
+        score.textContent = "The computer won, try again!";
+    }
+    else if (scoreComputer < scorePlayer) {
+        score.textContent = "Congratulations, you won!";
+    }
+    else {
+        score.textContent = "it's a tie, play again!"
+    }
+    
 });
 
 function generateRandomWord() {
@@ -54,38 +105,41 @@ function decideOutcome (playerSelection, computerSelection) {
     
     if (playerSelection == "scissors" && computerSelection == "rock") {
         console.log("computer won, you lost");
+        return scoreComputer = scoreComputer +1;
     } 
     else if (playerSelection == "scissors" && computerSelection == "paper") {
         console.log("you won, computer lost");
+        return scorePlayer = scorePlayer +1;
     }
     else if (playerSelection == "rock" && computerSelection == "scissors") {
         console.log("you won, computer lost");
+        return scorePlayer = scorePlayer +1;
     }
     else if (playerSelection == "rock" && computerSelection == "paper") {
         console.log("computer won, you lost");
+        return scoreComputer = scoreComputer +1;
         
     }
     else if (playerSelection == "paper" && computerSelection == "rock") {
         console.log("you won, computer lost");
+        return scorePlayer = scorePlayer +1;
     }
     else if (playerSelection == "paper" && computerSelection == "scissors") {
         console.log("computer won, you lost");
+        return scoreComputer = scoreComputer +1;
     }
     else {
         console.log("it's a tie")
     }
 }
 
-function playOneGame() {
-
-    const computerSelection = generateRandomWord();
-
-    generateRandomWord();
-    decideOutcome(playerSelection, computerSelection);
-    console.log(scorePlayer, scoreComputer);
-}
 
 
 
+
+
+//div toevoegen na spelen van eerste spel
+//content veranderen naargelang de score
+//na spelen van 5 spellen weergeven wie gewonnen is, of gelijkspel
 
 
