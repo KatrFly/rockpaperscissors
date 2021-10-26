@@ -1,0 +1,22 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+button {
+    width: 150px;
+    font-size: 25px;
+    margin: 20px;
+}
+
+
+
+/* function playOneGame() {
+
+    const computerSelection = generateRandomWord();
+
+    generateRandomWord();
+    decideOutcome(playerSelection, computerSelection);
+    console.log(scorePlayer, scoreComputer);
+}
