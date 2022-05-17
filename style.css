@@ -12,7 +12,8 @@ button {
 
 
 
-/* function playOneGame() {
+
+ function playOneGame() {
 
     const computerSelection = generateRandomWord();
 

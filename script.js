@@ -132,14 +132,3 @@ function decideOutcome (playerSelection, computerSelection) {
         console.log("it's a tie")
     }
 }
-
-
-
-
-
-
-//div toevoegen na spelen van eerste spel
-//content veranderen naargelang de score
-//na spelen van 5 spellen weergeven wie gewonnen is, of gelijkspel
-
-
